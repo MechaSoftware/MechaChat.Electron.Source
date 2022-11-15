@@ -1,5 +1,4 @@
-/out
-/node_modules
-/.git
+out
+.git/
 package-lock.json
 node_modules
