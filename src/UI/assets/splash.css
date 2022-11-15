@@ -1,0 +1,156 @@
+<<<<<<< Updated upstream
+@font-face {
+    font-family: "Ginto Nord Regular";
+    src: url("./Ginto\ Nord\ Regular.ttf");
+}
+
+* {
+    -webkit-user-select: none;
+}
+
+html {
+    height: 100% !important;
+	Width: 100% !important;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    height: 100% !important;
+	Width: 100% !important;
+    background-color: transparent;
+}
+
+.splash-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 348px !important;
+	Width: 735px !important;
+    background-color: rgb(44, 44, 44);
+    border-radius: 15px;
+    -webkit-app-region: drag;
+}
+
+.splash-center img {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.splash-center span {
+    position: absolute;
+    color: white;
+    font-size: 23px;
+    font-family: 'Ginto Nord Regular';
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.splash-spinner {
+    display: inline-block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.splash-spinner div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: splash-spinner 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.splash-spinner div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.splash-spinner div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.splash-spinner div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes splash-spinner {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+}
+=======
+@font-face {
+    font-family: "Ginto Nord Regular";
+    src: url("./Ginto\ Nord\ Regular.ttf");
+}
+
+* {
+    -webkit-user-select: none;
+}
+
+html {
+    height: 100% !important;
+	Width: 100% !important;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    height: 100% !important;
+	Width: 100% !important;
+    background-color: transparent;
+}
+
+.splash-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 348px !important;
+	Width: 500px !important;
+    background-color: rgb(44, 44, 44);
+    border-radius: 15px;
+    -webkit-app-region: drag;
+    overflow: hidden;
+}
+
+.splash-center img {
+    position: absolute;
+    width: 700px;
+    height: auto;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.splash-center span {
+    position: absolute;
+    color: white;
+    font-size: 23px;
+    font-family: 'Ginto Nord Regular';
+    bottom: 30px;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+}
+>>>>>>> Stashed changes

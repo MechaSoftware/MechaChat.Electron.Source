@@ -1,0 +1,175 @@
+<<<<<<< Updated upstream
+{
+  "name": "MechaChat",
+  "version": "0.0.30",
+  "description": "MechaChat Application",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "npx electron-packager . MechaChat --all --icon 'src/UI/assets/MechaChat.ico' --overwrite",
+    "make": "electron-forge make",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.64",
+    "@electron-forge/maker-deb": "^6.0.0-beta.64",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.64",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.64",
+    "@electron-forge/maker-zip": "^6.0.0-beta.64",
+    "electron": "^20.0.0-beta.2",
+    "electron-builder": "^23.1.0",
+    "electron-packager": "^15.5.1"
+  },
+  "author": "MechaChat Solutions",
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^5.0.5",
+    "node-gyp": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MechaChat/mechachat-app.git"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "mechachat_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
+=======
+{
+  "name": "MechaChat",
+  "productName": "MechaChat",
+  "appId": "com.mechachat.app",
+  "version": "0.0.229",
+  "description": "MechaChat Messaging Application",
+  "copyright": "Copyright © 2022 • MechaChat Solutions",
+  "main": "./src/main.js",
+  "homepage": "https://mecha.chat/",
+  "private": true,
+  "keywords": [
+    "Messaging",
+    "Calls",
+    "Stream",
+    "Fun",
+    "Online"
+  ],
+  "author": "Mecha Solutions",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "npx electron-packager ./ MechaChat --platform=win32 --arch=all --icon './src/UI/assets/MechaChat.ico' --out 'packaged/' --overwrite",
+    "make": "electron-forge make --platform win32 --arch all",
+    "build": "electron-builder build",
+    "deploy": "npx electron-builder build --win --x64 --ia32 --publish always",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0",
+    "@electron-forge/maker-deb": "^6.0.0",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.64",
+    "@electron-forge/maker-squirrel": "^6.0.0",
+    "@electron-forge/maker-zip": "^6.0.0",
+    "electron": "^20.0.0-beta.2",
+    "electron-builder": "^23.1.0",
+    "electron-packager": "^15.5.1",
+    "electron-updater": "^5.2.1",
+    "electron-winstaller": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "grunt-electron-installer": "^2.1.0",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "@electron-delta/updater": "^0.1.17",
+    "electron-builder-notarize": "^1.5.0",
+    "electron-log": "^4.4.8",
+    "node-gyp": "^9.0.0",
+    "node-notifier": "^10.0.1",
+    "update-electron-app": "^2.0.1"
+  },
+  "build": {
+    "appId": "com.mechachat.app",
+    "productName": "MechaChat",
+    "icon": "resources/MechaChat_260.ico",
+    "directories": {
+      "buildResources": "resources/",
+      "output": "out/"
+    },
+    "extraFiles": [
+      {
+        "from": "./assets/",
+        "to": "./assets/"
+      }
+    ],
+    "npmRebuild": true,
+    "win": {
+      "icon": "resources/MechaChat_260.ico",
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "https://dl.mecha.chat/app/win32/"
+        }
+      ],
+      "files": [
+        "src/**/*",
+        "node_modules/**/*",
+        "package.json",
+        "resources/**/*"
+      ],
+      "target": [
+        "nsis",
+        "nsis-web"
+      ],
+      "asarUnpack": [
+        "**/*.node"
+      ]
+    },
+    "nsis": {
+      "perMachine": false,
+      "oneClick": true,
+      "installerIcon": "resources/MechaChat_260.ico",
+      "uninstallerIcon": "resources/MechaChat_260.ico",
+      "installerHeaderIcon": "resources/MechaChat_260.ico",
+      "uninstallDisplayName": "MechaChat",
+      "deleteAppDataOnUninstall": true,
+      "artifactName": "MechaChat_${version}.exe",
+      "include": "build-scripts/installer.nsh"
+    },
+    "nsisWeb": {
+      "perMachine": false,
+      "oneClick": true,
+      "installerIcon": "resources/MechaChat_260.ico",
+      "uninstallerIcon": "resources/MechaChat_260.ico",
+      "installerHeaderIcon": "resources/MechaChat_260.ico",
+      "uninstallDisplayName": "MechaChat",
+      "deleteAppDataOnUninstall": true,
+      "artifactName": "MechaChat_${version}.exe",
+      "include": "build-scripts/installer.nsh"
+    }
+  }
+}
+>>>>>>> Stashed changes

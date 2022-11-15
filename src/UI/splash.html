@@ -1,0 +1,67 @@
+<<<<<<< Updated upstream
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-Content-Type-Options" content="no-sniff">
+		<title>MechaChat</title>
+		<link rel='icon' href='assets/MechaChat.ico' type='image/x-icon' \>
+		<link rel="stylesheet" href="assets/splash.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="splash-center">
+			<img src="assets/MechaChat_Banner.png" \><br>
+			<span id="status-update">Starting MechaChat</span>
+			<div class="splash-spinner"><div></div><div></div><div></div></div>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script>
+			require('electron').ipcRenderer.on('update-available-message', function (evt, message) {
+   				$("#status-update").html("Downloading Latest Update.<br>We will restart automatically!");
+			});
+		</script>
+	</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-Content-Type-Options" content="no-sniff" />
+    <title>MechaChat</title>
+    <link rel="icon" href="assets/MechaChat_256.ico" type="image/x-icon" \ />
+    <link rel="stylesheet" href="assets/splash.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="splash-center">
+      <img src="assets/MechaChat NB.gif" /><br />
+      <span id="status-update">Checking for updates...</span>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      var ProgressBar = require("progressbar.js");
+
+      require("electron").ipcRenderer.on("update-available", (evt, message) => {
+        $("#status-update").html(
+          "Downloading Latest Update.<br>We will restart automatically!"
+        );
+      });
+
+      require("electron").ipcRenderer.on(
+        "no-update-available",
+        (evt, message) => {
+          $("#status-update").html("MechaChat Starting");
+        }
+      );
+    </script>
+  </body>
+</html>
+>>>>>>> Stashed changes
