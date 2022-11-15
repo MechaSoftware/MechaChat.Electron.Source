@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-const { contextBridge } = require('electron');
-
-contextBridge.exposeInMainWorld('myAPI', {
-    loadPreferences: () => ipcRenderer.invoke('load-prefs');
-});
-=======
 const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electron", {
@@ -15,4 +8,3 @@ contextBridge.exposeInMainWorld("electron", {
     isLoadedInApp: "windows",
   },
 });
->>>>>>> Stashed changes
