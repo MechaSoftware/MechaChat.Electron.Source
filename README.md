@@ -1,4 +1,4 @@
-# MechaChat Electron App Source Code (Windows)
+# MechaChat Electron App Source Code (MacOS)
 UNDER DEVELOPMENT
 #
 FOR TESTING PURPOSES ONLY
