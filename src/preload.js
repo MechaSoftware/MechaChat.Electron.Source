@@ -1,10 +1,10 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electron", {
-  windowClose: () => ipcRenderer.send("windowClose"),
-  windowMax: () => ipcRenderer.send("windowMax"),
-  windowMin: () => ipcRenderer.send("windowMin"),
+  windowClose: () => ipcRenderer.send("macosClose"),
+  windowMax: () => ipcRenderer.send("macosMax"),
+  windowMin: () => ipcRenderer.send("macosMin"),
   data: {
-    isLoadedInApp: "windows",
+    isLoadedInApp: "macos",
   },
 });
