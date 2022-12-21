@@ -77,7 +77,7 @@ function showBalloonNotification(notifyTitle, notifyMessage) {
       icon: path.join(userRoamingData, 'assets/notification_icon.png'),
       sound: 'Default',
     },
-    function (error, data) {}
+    function (error, data) { }
   );
 }
 
@@ -114,7 +114,7 @@ const createWindow = () => {
     transparent: true,
     fullscreenable: false,
     fullscreen: false,
-    icon: path.join(__dirname, "UI/assets/MechaChat_260.ico"),
+    icon: path.join(__dirname, "UI/assets/MechaChat_512.ico"),
     webPreferences: {
       devTools: false,
       nodeIntegration: true,
@@ -143,11 +143,11 @@ app.on("window-all-closed", (event, data) => {
   app.quit();
 });
 
-ipc.on("windowMin", (event, data) => {
+ipc.on("macosMin", (event, data) => {
   win.minimize();
 });
 
-ipc.on("windowClose", (event, data) => {
+ipc.on("macosClose", (event, data) => {
   const template = [
     {
       label: "MechaChat",
@@ -267,7 +267,7 @@ autoUpdater.on("update-not-available", () => {
         resizable: true,
         fullscreenable: false,
         fullscreen: false,
-        icon: path.join(__dirname, "UI/assets/MechaChat_260.ico"),
+        icon: path.join(__dirname, "UI/assets/MechaChat_512.ico"),
         webPreferences: {
           nodeIntegration: true,
           contextIsolation: true,
@@ -291,7 +291,7 @@ autoUpdater.on("update-not-available", () => {
 
 autoUpdater.on("update-available", () => {
   log.info("Update available.");
-  
+
   if (isCompletedSplash === false) {
     splashWin.webContents.send("update-available");
   }
